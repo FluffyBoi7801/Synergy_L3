@@ -5,6 +5,7 @@ button {
     padding: 2px;
     transition: background 300ms;
     cursor: pointer;
+    user-select: none;
 
     &:hover {
         background: rgba(0, 0, 0, 0.1);
@@ -13,37 +14,46 @@ button {
 
 .slider {
     width: 528px;
-    height: 336px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 12px 12px;
+    color: black;
     background: #f4e2cf;
     border-radius: 12px;
     gap: 12px;
 
-    & .prevButton {
-        & > img {
-            width: 36px;
-            height: 36px;
+    & > .contentContainer {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        & .prevButton {
+            & > img {
+                width: 36px;
+                height: 36px;
+            }
         }
-    }
 
-    & > .imageContainer {
-        height: 100%;
-        flex-grow: 1;
+        & > .imageContainer {
+            height: 100%;
+            flex-grow: 1;
+            user-select: none;
+            pointer-events: none;
 
-        & > img {
-            border-radius: 12px;
-            overflow: hidden;
+            & > img {
+                border-radius: 12px;
+                overflow: hidden;
+            }
         }
-    }
 
-    & .nextButton {
-        transform: rotate(180deg);
+        & .nextButton {
+            transform: rotate(180deg);
 
-        & > img {
-            width: 36px;
-            height: 36px;
+            & > img {
+                width: 36px;
+                height: 36px;
+            }
         }
     }
 }
